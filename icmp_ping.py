@@ -112,4 +112,4 @@ def ping(host, timeout=1):
 # ping("google.com")        # Ping from North America
 # ping("bbc.co.uk")         # Ping from Europe
 # ping("yahoo.co.jp")       # Ping from Asia
-ping("news24.com")        # Ping from Africa
+# ping("news24.com")        # Ping from Africa
