@@ -10,10 +10,12 @@ A python ICMP Ping app that sends echo requests, measures rount trip time (RTT),
 ## TO RUN IT
 **On Windows**
 - Right click your VSCode then select Run as Administrator
--Run the icmp_ping.py
+- Run the icmp_ping.py
 
 **On macOS**
 - Run by using sudo python3 icmp_ping.py
+- You should see the response ping message
+- Ctrl-C to stop running
 
 ## TESTING THE HOST
 Uncomment the desired host in the code for pinging:
