@@ -13,12 +13,12 @@ def checksum(string):
     countTo = (len(string) // 2) * 2
     count = 0
     while count < countTo:
-        thisVal = ord(string[count+1]) * 256 + ord(string[count])
+        thisVal = string[count+1] * 256 + string[count]
         csum = csum + thisVal
         csum = csum & 0xffffffff
         count = count + 2
     if countTo < len(string):
-        csum = csum + ord(string[len(string) - 1])
+        csum = csum + string[len(string) - 1]
         csum = csum & 0xffffffff
     csum = (csum >> 16) + (csum & 0xffff)
     csum = csum + (csum >> 16)
@@ -75,7 +75,7 @@ def sendOnePing(mySocket, destAddr, ID):
     header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, myChecksum, ID, 1)
     data = struct.pack("d", time.time())
     # Calculate the checksum on the data and the dummy header.
-    myChecksum = checksum(str(header + data))
+    myChecksum = checksum(header + data)
     
     # Get the right checksum, and put in the header
     if sys.platform == 'darwin':
@@ -107,10 +107,10 @@ def ping(host, timeout=1):
         time.sleep(1) # one second
     return delay
 
-    # To ping the desired host, uncomment
-    ping("127.0.0.1")           # To localhost
+# To ping the desired host, uncomment
+# ping("127.0.0.1")           # To localhost
 
-    # ping("google.com")        # Ping from North America
-    # ping("bbc.co.uk")         # Ping from Europe
-    # print("yahoo.co.jp")       # Ping from Asia
-    # ping("news24.com")        # Ping from Africa
+ping("google.com")        # Ping from North America
+# ping("bbc.co.uk")         # Ping from Europe
+# print("yahoo.co.jp")       # Ping from Asia
+# ping("news24.com")        # Ping from Africa
