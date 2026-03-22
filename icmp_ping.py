@@ -106,3 +106,11 @@ def ping(host, timeout=1):
         print(delay)
         time.sleep(1) # one second
     return delay
+
+    # To ping the desired host, uncomment
+    ping("127.0.0.1")           # To localhost
+
+    # ping("google.com")        # Ping from North America
+    # ping("bbc.co.uk")         # Ping from Europe
+    # print("yahoo.co.jp")       # Ping from Asia
+    # ping("news24.com")        # Ping from Africa
