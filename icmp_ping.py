@@ -108,8 +108,8 @@ def ping(host, timeout=1):
     return delay
 
 # To ping the desired host, uncomment one, then run sudo python3 icmp_ping.py to get result
-ping("127.0.0.1")           # To localhost
+# ping("127.0.0.1")         # To localhost
 # ping("google.com")        # Ping from North America
 # ping("bbc.co.uk")         # Ping from Europe
-# print("yahoo.co.jp")      # Ping from Asia
-# ping("news24.com")        # Ping from Africa
+# ping("yahoo.co.jp")       # Ping from Asia
+ping("news24.com")        # Ping from Africa
